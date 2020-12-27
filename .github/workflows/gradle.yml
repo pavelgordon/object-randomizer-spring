@@ -29,4 +29,4 @@ jobs:
       run: echo "${{ secrets.ADMIN_GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
     - name: Build and push docker image
-      run: ./gradlew jib
+      run: ./gradlew  --stacktrace --info jib

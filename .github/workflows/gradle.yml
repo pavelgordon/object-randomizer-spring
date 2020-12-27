@@ -31,4 +31,4 @@ jobs:
         git config --global credential.helper store
     
     - name: Build and push docker image
-      run: ./gradlew jib
+      run: ./gradlew jib -Djib.to.auth.username=pavelgordon -Djib.to.auth.password=${{ secrets.ADMIN_GITHUB_TOKEN }}

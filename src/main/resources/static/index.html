@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JSON Randomizer</title>
+
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/throbber.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/jdd.css" type="text/css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="js/randomizer.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150469870-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-150469870-2');
+    </script>
+
+
+</head>
+<body>
+
+<div id="main">
+    <div class="header">
+        <h1>JSON Randomizer</h1>
+        <!--        <h3>JSON Randomizer</h3>-->
+
+        <div class="weak">
+            <p>
+                Randomize JSON/Java(work in progress) object properties.
+            </p>
+
+            <p>
+                Created by <a href="http://pgordon.dev">Pavel Gordon</a>.
+                <!--                Get the <a href="http://www.jsondiff.com/">source code</a>.-->
+            </p>
+
+            <p>
+                Used UI from <a href="http://www.jsondiff.com/">JSON Diff</a> - useful tool to compare two JSON's
+            </p>
+
+        </div>
+    </div>
+
+    <div class="initContainer">
+        <div class="left">
+            <textarea spellcheck="false" id="textarealeft" placeholder="Enter JSON to compare, enter an URL to JSON"
+                      tabindex="1">
+{
+   "string" : "aaa",
+   "number": 5,
+   "nestedObject": {
+       "booleanValue": true,
+       "arrayOfNums": [112,445,667],
+       "arrayOfStrings": ["apple","banana"]
+   },
+   "arrayOfObjects": [
+       {"id": 1, "name": "pg"},
+       {"id": 2, "name": "pg"}
+   ]
+}
+            </textarea>
+            <pre id="errorLeft" class="error"></pre>
+<!--            <span class="fileInput">or <input type="file" id="fileLeft" tabindex="4"></span>-->
+        </div>
+
+        <div class="center">
+            <button id="compare" tabindex="3" onclick="randomize();
+
+
+">Randomize
+            </button>
+            <!--            <div class="throbber-loader"></div>-->
+            <!--            <br/><br/>-->
+            <!--            or try some<br /><a href="#" id="sample">sample data</a>-->
+
+        </div>
+
+        <div class="right">
+            <textarea spellcheck="false" disabled class="right" id="textarearight"
+                      placeholder="Randomized JSON will appear here" tabindex="2"></textarea>
+            <pre id="errorRight" class="error"></pre>
+<!--            <span class="fileInput">or <input type="file" id="fileRight" tabindex="5"></span>-->
+        </div>
+    </div>
+<!--    <img src="https://canarytokens.com/terms/images/traffic/u8j0frt3d4o3r1ni5xvwlrwca/contact.php"/>-->
+
+    <div class="diffcontainer">
+        <div id="report">
+        </div>
+        <pre id="out" class="left" class="codeBlock"></pre>
+        <pre id="out2" class="right" class="codeBlock"></pre>
+        <ul id="toolbar" class="toolbar"></ul>
+    </div>
+</div>
+
+</body>
+</html>

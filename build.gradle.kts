@@ -52,7 +52,7 @@ tasks.withType<Test> {
 // run docker login in case of errors
 jib {
     to {
-        image = "docker.pkg.github.com/pavelgordon/object-randomizer"
+        image = "docker.pkg.github.com/pavelgordon/object-randomizer-spring"
     }
 }
 
